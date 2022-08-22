@@ -67,7 +67,7 @@ Move the current pane right
 **Ctrl + b [Down Arrow]** <br/>
 **Ctrl + b [Right Arrow]** <br/>
 **Ctrl + b [Left Arrow]** <br/>
-Switch to pane to the direction
+Switch to pane in the direction of *arrow*
 
 ### Command mode
 **Ctrl + b :** <br/>
