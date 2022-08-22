@@ -13,10 +13,20 @@ Show pane numbers
 Switch/select pane by number
 
 **Ctrl + b %**<br/>
-Split pane with horizontal layout
+**:splitw -h** <br/>
+Split pane with horizontal layout (two panes side by side)
+
+**:selectp -t *right*** <br/>
+**:selectp -t *left*** <br/>
+Select top pane (assuming there are two side by side panes)
 
 **Ctrl + b "**<br/>
-Split pane with vertical layout
+**:splitw -v** <br/>
+Split pane with vertical layout (two stacked panes)
+
+**:selectp -t *top*** <br/>
+**:selectp -t *bottom*** <br/>
+Select top pane (assuming there are two stacked panes)
 
 **Ctrl + b Spacebar** <br/>
 Toggle between pane layouts
@@ -29,6 +39,9 @@ Toggle pane zoom
 
 **Ctrl + b !** <br/>
 Convert pane into a window
+
+**:set -g pane-active-border-style bg=*red*** <br/>
+Set active pane border to red (tmux > ver. 2.9 otherwise remove *bg=*)
 
 ### Resizing Panes
 **Ctrl + b + [Up Arrow]** <br/>
