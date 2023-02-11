@@ -1,167 +1,173 @@
 # Tmux pane cheatsheet
+
 ## Interacting with Panes
-**Ctrl + b ;**<br/>
+
+**Ctrl + b ;**
 Toggle last active pane
 
-**Ctrl + b o** <br/>
+**Ctrl + b o**
 Switch to next pane
 
-**Ctrl + b q** <br/>
+**Ctrl + b q**
 Show pane numbers
 
-**Ctrl + b q 0 ... 9** <br/>
+**Ctrl + b q 0 ... 9**
 Switch/select pane by number
 
-**Ctrl + b %**<br/>
-**:splitw -h** <br/>
+**Ctrl + b %**
+**:splitw -h**
 Split pane with horizontal layout (two panes side by side)
 
-**:selectp -t *right*** <br/>
-**:selectp -t *left*** <br/>
+**:selectp -t *right***
+**:selectp -t *left***
 Select top pane (assuming there are two side by side panes)
 
-**Ctrl + b "**<br/>
-**:splitw -v** <br/>
+**Ctrl + b "**
+**:splitw -v**
 Split pane with vertical layout (two stacked panes)
 
-**:selectp -t *top*** <br/>
-**:selectp -t *bottom*** <br/>
+**:selectp -t *top***
+**:selectp -t *bottom***
 Select top pane (assuming there are two stacked panes)
 
-**Ctrl + b Spacebar** <br/>
+**Ctrl + b Spacebar**
 Toggle between pane layouts
 
-**Ctrl + b x** <br/>
+**Ctrl + b x**
 Close current pane
 
-**Ctrl + b z** <br/>
+**Ctrl + b z**
 Toggle pane zoom
 
-**Ctrl + b !** <br/>
+**Ctrl + b !**
 Convert pane into a window
 
-**:set -g pane-active-border-style bg=*red*** <br/>
+**:set -g pane-active-border-style bg=*red***
 Set active pane border to red (tmux > ver. 2.9 otherwise remove *bg=*)
 
 ### Resizing Panes
-**Ctrl + b + [Up Arrow]** <br/>
-**Ctrl + b Ctrl + [Up Arrow]** <br/>
-**Ctrl + b + [Down Arrow]** <br/>
-**Ctrl + b Ctrl + [Down Arrow]** <br/>
+
+**Ctrl + b + [Up Arrow]**
+**Ctrl + b Ctrl + [Up Arrow]**
+**Ctrl + b + [Down Arrow]**
+**Ctrl + b Ctrl + [Down Arrow]**
 Resize current pane height(holding second key is optional)
 
-**Ctrl + b + [Right Arrow]** <br/>
-**Ctrl + b Ctrl + [Right Arrow]** <br/>
-**Ctrl + b + [Left Arrow]** <br/>
-**Ctrl + b Ctrl + [Left Arrow]** <br/>
+**Ctrl + b + [Right Arrow]**
+**Ctrl + b Ctrl + [Right Arrow]**
+**Ctrl + b + [Left Arrow]**
+**Ctrl + b Ctrl + [Left Arrow]**
 Resize current pane width(holding second key is optional)
 
-### Moving Panes 
-**Ctrl + b {**<br/>
+### Moving Panes
+
+**Ctrl + b {**
 Move the current pane left
 
-**Ctrl + b }**<br/>
+**Ctrl + b }**
 Move the current pane right
 
-**Ctrl + b + [Up Arrow]** <br/>
-**Ctrl + b [Down Arrow]** <br/>
-**Ctrl + b [Right Arrow]** <br/>
-**Ctrl + b [Left Arrow]** <br/>
+**Ctrl + b + [Up Arrow]**
+**Ctrl + b [Down Arrow]**
+**Ctrl + b [Right Arrow]**
+**Ctrl + b [Left Arrow]**
 Switch to pane in the direction of *arrow*
 
 ### Command mode
-**Ctrl + b :** <br/>
+
+**Ctrl + b :**
 Enter command mode
 
-**:set mouse on** <br/>
+**:set mouse on**
 Enable mouse mode
 
-**:setw synchronize-panes** <br/>
+**:setw synchronize-panes**
 Toggle synchronize-panes(send command to all panes)
 
-**:list-keys** <br/>
-**Ctrl + b ?** <br/>
-**$ tmux list-keys** <br/>
+**:list-keys**
+**Ctrl + b ?**
+**$ tmux list-keys**
 List key bindings(shortcuts)
 
-
 ## Session management
-**$ tmux info**  <br/>
+
+**$ tmux info**
 Show every session, window, pane, etc...
 
-**$ tmux ls** <br/>
-**$ tmux list-sessions** <br/>
-**Ctrl + b s** <br/>
+**$ tmux ls**
+**$ tmux list-sessions**
+**Ctrl + b s**
 Show all sessions
 
-**$ tmux a** <br/>
-**$ tmux at** <br/>
-**$ tmux attach** <br/>
-**$ tmux attach-session** <br/>
+**$ tmux a**
+**$ tmux at**
+**$ tmux attach**
+**$ tmux attach-session**
 Attach to last session
 
-**$ tmux a -t *mysession*** <br/>
-**$ tmux at -t *mysession*** <br/>
-**$ tmux attach -t *mysession*** <br/>
-**$ tmux attach-session -t *mysession*** <br/>
+**$ tmux a -t *mysession***
+**$ tmux at -t *mysession***
+**$ tmux attach -t *mysession***
+**$ tmux attach-session -t *mysession***
 Attach to a session with the name *mysession*
 
-**$ tmux new -s *mysession*** <br/>
-**:new -s *mysession*** <br/>
+**$ tmux new -s *mysession***
+**:new -s *mysession***
 Start a new session with the name *mysession*
 
-**$ tmux kill-ses -t *mysession*** <br/>
-**$ tmux kill-session -t *mysession*** <br/>
+**$ tmux kill-ses -t *mysession***
+**$ tmux kill-session -t *mysession***
 kill/delete session *mysession*
 
-**$ tmux kill-session -a** <br/>
+**$ tmux kill-session -a**
 kill/delete all sessions but the current
 
-**$ tmux kill-session -a -t *mysession*** <br/>
+**$ tmux kill-session -a -t *mysession***
 kill/delete all sessions but *mysession*
 
-**Ctrl + b $** <br/>
+**Ctrl + b $**
 Rename session
 
-**Ctrl + b d** <br/>
+**Ctrl + b d**
 Detach from session
 
-**Ctrl + b w** <br/>
+**Ctrl + b w**
 Session and Window Preview
 
-**Ctrl + b (** <br/>
+**Ctrl + b (**
 Move to previous session
 
-**Ctrl + b )** <br/>
+**Ctrl + b )**
 Move to next session
 
 ## Windows
-**$ tmux new -s *mysession* -n *mywindow*** <br/>
+
+**$ tmux new -s *mysession* -n *mywindow***
 start a new session with the name *mysession* and window *mywindow*
 
-**Ctrl + b c** <br/>
+**Ctrl + b c**
 Create window
 
-**Ctrl + b ,** <br/>
+**Ctrl + b ,**
 Rename current window
 
-**Ctrl + b &** <br/>
+**Ctrl + b &**
 Close current window
 
-**Ctrl + b p** <br/>
+**Ctrl + b p**
 Previous window
 
-**Ctrl + b n** <br/>
+**Ctrl + b n**
 Next window
 
-**Ctrl + b 0 ... 9** <br/>
+**Ctrl + b 0 ... 9**
 Switch/select window by number
 
-**Ctrl + b l** <br/>
+**Ctrl + b l**
 Toggle last active window
 
-**:swap-window -s 2 -t 1** <br/>
+**:swap-window -s 2 -t 1**
 Reorder window, swap window number 2(src) and 1(dst)
 
-**:swap-window -t -1** <br/>
+**:swap-window -t -1**
 Move current window to the left by one position
