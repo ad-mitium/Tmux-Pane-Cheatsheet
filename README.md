@@ -1,5 +1,10 @@
 # Tmux pane cheatsheet
 
+## Importing config file for new session
+
+**tmux source-file [FILE NAME]**
+Start new session from config file
+
 ## Interacting with Panes
 
 **Ctrl + b ;**
